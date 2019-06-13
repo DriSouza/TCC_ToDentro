@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OnBoardingDemo</string>
+
+    <!-- OnBoard Screen. -->
+
+    <string name="ob_header1">VEJA GUIAS PARA ESTUDOS</string>
+    <string name="ob_header2">FAÇA SIMULADOS DAS MATÉRIAS</string>
+    <string name="ob_header3">VEJA SEU DESEMPENHO EM CADA MATÉRIA</string>
+
+    <string name="ob_get_started">Começar</string>
+
+    <string name="ob_desc1">Faça um planejamento de estudos de acordo com as matérias</string>
+    <string name="ob_desc2">Faça simulado das matérias de acordo com os níveis de dificuldades</string>
+    <string name="ob_desc3">Veja a estatística de como foi em cada matéria.</string>
+
+</resources>
