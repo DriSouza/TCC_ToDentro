@@ -25,25 +25,16 @@ import java.util.List;
 
 public class OnBoardingActivity extends AppCompatActivity {
 
-
     private static final int RC_SIGN_IN = 100;
     private LinearLayout pager_indicator;
     private int dotsCount;
     private ImageView[] dots;
-
-
-
     private ViewPager onboard_pager;
-
     private OnBoard_Adapter mAdapter;
-
     private Button btn_get_started;
-
     int previous_pos=0;
 
-
     ArrayList<OnBoardItem> onBoardItems=new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +89,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             btn_get_started.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+//                    Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
 
 //                    startActivity(new Intent(getApplicationContext(), Login.class));
 //                    finish();
@@ -111,7 +103,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                                     .createSignInIntentBuilder()
                                     .setAvailableProviders(providers)
                                     .setLogo(R.drawable.aula)      // Set logo drawable
-//                                    .setTheme(R.style.MySuperAppTheme)
+                                    .setTheme(R.style.FirebaseUiTheme)
                                     .build(),
                             RC_SIGN_IN);
                 }
@@ -124,6 +116,19 @@ public class OnBoardingActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            // already signed in
+            startActivity(new Intent(getApplicationContext(), Perfil.class));
+            finish();
+        } else {
+            // not signed in
+        }
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
@@ -132,7 +137,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 // Successfully signed in
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), Perfil.class));
                     finish();
                 // ...
             } else {

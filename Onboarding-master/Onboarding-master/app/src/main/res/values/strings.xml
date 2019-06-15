@@ -12,5 +12,6 @@
     <string name="ob_desc1">Faça um planejamento de estudos de acordo com as matérias</string>
     <string name="ob_desc2">Faça simulado das matérias de acordo com os níveis de dificuldades</string>
     <string name="ob_desc3">Veja a estatística de como foi em cada matéria.</string>
+    <string name="menu_logout">Sair</string>
 
 </resources>

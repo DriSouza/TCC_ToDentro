@@ -15,4 +15,11 @@
         <item name="textAllCaps">false</item>
     </style>
 
+    <style name="FirebaseUiTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryAlternative</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkAlternative</item>
+        <item name="colorAccent">@color/colorAccentAlternative</item>
+    </style>
+
 </resources>
